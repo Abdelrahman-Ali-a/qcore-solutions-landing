@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-default-lang="ar" data-title-ar="Bayan — دفتر المحل الذي يكتب ما تقوله">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Bayan is an Arabic-first ledger for small shops in Egypt. You say what happened. Bayan drafts the entry, and you confirm it before it is saved. Built by Qcore Solutions." data-ar-content="Bayan دفتر عربي أولًا للمحلات الصغيرة في مصر. تقول ما حدث، وBayan يجهّز القيد، وأنت تؤكّده قبل الحفظ. من Qcore Solutions.">
+  <title>Bayan — the shop ledger that writes what you say</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;display=swap">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css?v=5">
+  <link rel="stylesheet" href="bayan.css">
+  <style>html[data-default-lang="ar"]:not([data-lang-ready]) body{visibility:hidden}</style>
+  <noscript><style>body{visibility:visible!important}</style></noscript>
+  <script src="bayan.js"></script>
+</head>
+<body class="bayan">
+  <a class="skip-link" href="#main" data-ar="انتقل إلى المحتوى">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../" aria-label="Qcore Solutions — home" data-ar-aria-label="Qcore Solutions — الصفحة الرئيسية">
+      <img class="header-logo" src="../qcore-logo-header.svg?v=2" alt="" width="1003" height="380">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="On this page" data-ar-aria-label="في هذه الصفحة">
+      <a href="#top" data-ar="بيان">Bayan</a>
+      <a href="#ledger" data-ar="الدفتر">Ledger</a>
+      <a href="#cashbook" data-ar="الصندوق">Cashbook</a>
+      <a href="#assistant" data-ar="المساعد">Assistant</a>
+      <a href="#offline" data-ar="بدون اتصال">Offline</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-btn" type="button" data-lang-toggle>عربي</button>
+      <a class="button button-small button-blue header-cta" href="https://wa.me/201505716467" data-ar="وصول مبكر">Early access</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation" data-ar-aria-label="افتح قائمة التنقل"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="bayan-hero" id="top" aria-labelledby="hero-title">
+      <div class="bayan-hero-grid">
+        <div class="hero-copy">
+          <h1 class="bayan-name" id="hero-title">
+            <img class="bayan-logo" src="bayan-logo.png" alt="بيان — Bayan" width="1222" height="1287" fetchpriority="high">
+          </h1>
+          <p class="hero-lead" data-ar="تقول ما حدث بكلامك. Bayan يكتب دفتر المحل بعد أن تؤكّد.">You say what happened, in your own words. Bayan writes the shop ledger after you confirm.</p>
+          <p class="hero-note" data-ar="للمحلات الصغيرة في مصر، على Android و iOS، ويعمل بدون اتصال.">For small shops in Egypt, on Android and iOS, and it works offline.</p>
+          <div class="bayan-actions">
+            <a class="button button-blue" href="https://wa.me/201505716467" data-ar="تواصل معنا للوصول المبكر">Contact us for early access</a>
+            <a class="button button-outline" href="mailto:contact@qcore-solutions.com" data-ar="راسلنا بالبريد">Email us</a>
+          </div>
+        </div>
+        <div class="phone-cluster">
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/onboarding.png?v=2" width="390" height="844" alt="Bayan language screen, with Arabic selected" data-ar-alt="شاشة لغة Bayan والعربية مختارة" fetchpriority="high" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="اختيار اللغة">Language</figcaption>
+          </figure>
+          <figure class="shot shot-lift">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/ledger.png?v=2" width="390" height="844" alt="Bayan credit ledger with customer balances" data-ar-alt="دفتر الآجل في Bayan وأرصدة العملاء" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="دفتر الآجل">Credit ledger</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet" id="notebook" aria-labelledby="notebook-title">
+      <div class="notebook">
+        <div class="spread-copy">
+          <h2 id="notebook-title" data-ar="دفتر الآجل لا يغادر المحل.">The notebook stays on the counter.</h2>
+          <p class="lede" data-ar="الآجل في المحل اسم ورقم في دفتر ورقي. الدفتر لا يذكّر أحدًا بالدفع، ولا يجمع لك الحساب، ولا تحمله معك. فإذا خرجت من المحل، بقي حسابك فيه.">Credit is a name and a number in a paper notebook. It does not remind anyone, it does not total the page, and it does not leave with you. If the book stays at the shop, the balance stays at the shop.</p>
+          <p class="lede" data-ar="Bayan يحافظ على طريقتك ويستغني عن الورق. تقول ما حدث بكلامك، فيجهّز القيد، ولا يُحفظ شيء حتى تؤكّد الاسم والمبلغ.">Bayan keeps the habit and leaves the paper. You tell it what happened. It drafts the entry. Nothing is saved until you confirm the person and the amount.</p>
+        </div>
+        <div class="kunnash" aria-hidden="true">
+          <p class="kunnash-title" data-ar="دفتر ورقي">Paper notebook</p>
+          <div class="kunnash-cols">
+            <span data-ar="الاسم">Name</span>
+            <span data-ar="المبلغ">Amount</span>
+            <span data-ar="التاريخ">Date</span>
+          </div>
+          <div class="kunnash-row"><span data-ar="أحمد عبد الله">Ahmed Abdallah</span><span data-ar="٨٥٠">850</span><span data-ar="١٢/١٠">12/10</span></div>
+          <div class="kunnash-row"><span data-ar="محمود حسن">Mahmoud Hassan</span><span data-ar="١٬٢٥٠">1,250</span><span data-ar="١٤/١٠">14/10</span></div>
+          <div class="kunnash-row"><span data-ar="مدام هالة">Madam Hala</span><span><s data-ar="٢٠٠">200</s> <span data-ar="٢٧٥">275</span></span><span data-ar="١٩/١٠">19/10</span></div>
+          <div class="kunnash-row"><span data-ar="أم كريم">Umm Karim</span><span data-ar="١٦٠">160</span><span data-ar="٢٣/١٠">23/10</span></div>
+          <div class="kunnash-row kunnash-total"><span data-ar="المجموع">Total</span><span data-ar="؟">?</span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet" id="ledger" aria-labelledby="ledger-title">
+      <div class="spread">
+        <div class="spread-copy">
+          <h2 id="ledger-title" data-ar="تعرف من لك عنده، ومن له عليك.">You can see who owes you, and whom you owe.</h2>
+          <p class="lede" data-ar="لكل عميل ولكل مورد رصيد جارٍ. تضيف الحركة أو تعدّلها، ويمكنك إرفاق صورة.">Each customer and each supplier has a running balance. You add or edit a transaction, and you can attach a photo.</p>
+          <p class="lede" data-ar="تشارك كشف الحساب كملف PDF أو صورة أو نص، ويمكنك إرساله على WhatsApp. يمكنك إرسال تذكير سداد على WhatsApp الآن، أو جدولة تذكير.">You share a statement as a PDF, an image, or text, and you can send it on WhatsApp. You can send a WhatsApp payment reminder now, or schedule one.</p>
+        </div>
+        <div class="spread-visual">
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/contact.png" width="390" height="844" alt="A Bayan contact with a running balance and transactions" data-ar-alt="جهة اتصال في Bayan برصيد جارٍ وحركات" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="جهة الاتصال">Contact</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet" id="cashbook" aria-labelledby="cashbook-title">
+      <div class="spread spread-reverse">
+        <div class="spread-copy">
+          <h2 id="cashbook-title" data-ar="الداخل والخارج في صندوق واحد.">Money in and money out share one cashbook.</h2>
+          <p class="lede" data-ar="تسجّل الداخل والخارج مع التصنيفات، على لوحة أرقام فيها آلة حاسبة. ترفق صورة الإيصال وتُصدر إيصالًا يحمل اسم المحل وشعاره.">You record money in and money out with categories, on a keypad with a calculator. You attach a receipt photo and issue a receipt that carries the store name and logo.</p>
+          <p class="lede" data-ar="التقارير تُصدَّر إلى PDF أو إلى نص. حين تقفل فترة، يحتفظ بها Bayan في أرشيف.">Reports export to PDF or text. When you close a period, Bayan keeps it in an archive.</p>
+        </div>
+        <div class="spread-visual">
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/cashbook.png" width="390" height="844" alt="Bayan cashbook listing money in and money out" data-ar-alt="صندوق Bayan يعرض الداخل والخارج" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="الصندوق">Cashbook</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet" id="assistant" aria-labelledby="assistant-title">
+      <div class="spread">
+        <div class="spread-copy">
+          <h2 id="assistant-title" data-ar="أنت تتكلم. Bayan يجهّز المسودة. أنت تقرر ما يُحفظ.">You speak. Bayan drafts. You decide what is saved.</h2>
+          <p class="lede" data-ar="تتكلم، أو تصوّر فاتورة، بالمصرية. Bayan يجهّز الفاتورة أو قيد الصندوق.">Speak, or photograph an invoice, in Egyptian Arabic. Bayan drafts the invoice or the cashbook entry.</p>
+          <p class="lede" data-ar="تؤكّد جهة الاتصال والقيد قبل أن يُحفظ أي شيء. الاستخدام المجاني يشمل 20 طلبًا للمساعد في الشهر.">You confirm the contact and the entry before anything is saved. The free tier includes 20 assistant requests a month.</p>
+          <div class="slip">
+            <p class="slip-label" data-ar="مثال على ما يمكن أن تقوله. ليس قيدًا محفوظًا.">An example of what you can say. Not a saved entry.</p>
+            <p class="slip-say" lang="ar" dir="rtl">بضاعة لمحمد بخمسمائة جنيه</p>
+            <p class="slip-note" data-ar="Bayan يجهّز قيد آجل لمحمد بمبلغ 500 EGP، وينتظر. تختار جهة الاتصال وتؤكّد. حتى ذلك الحين لا يُحفظ شيء.">Bayan drafts a credit entry for Mohamed, 500 EGP, and waits. You choose the contact and confirm. Until then, nothing is saved.</p>
+          </div>
+        </div>
+        <div class="spread-visual">
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/ai.png" width="390" height="844" alt="Bayan assistant ready to record an invoice in Egyptian Arabic" data-ar-alt="مساعد Bayan جاهز لتسجيل فاتورة بالمصرية" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="المساعد">Assistant</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet sheet-muted" id="offline" aria-labelledby="offline-title">
+      <div class="block block-narrow">
+        <h2 id="offline-title" data-ar="القيد يُحفظ على الهاتف قبل أن يصل إلى الشبكة.">The entry is saved on the phone before it reaches the network.</h2>
+        <ol class="sync-steps">
+          <li>
+            <h3 data-ar="على الهاتف أولًا">On the phone first</h3>
+            <p data-ar="كل قيد يُحفظ على الجهاز قبل أي شبكة.">Every entry is saved on the device before any network.</p>
+          </li>
+          <li>
+            <h3 data-ar="ثم تتزامن">Then it syncs</h3>
+            <p data-ar="حين يتوفر اتصال، تتزامن Bayan. وحين لا يتوفر، تواصل العمل.">When there is a connection, Bayan syncs. When there is not, you keep working.</p>
+          </li>
+          <li>
+            <h3 data-ar="وترى حالة النسخ">You can see the backup</h3>
+            <p data-ar="كل قسم يُظهر حالة النسخ الاحتياطي الخاصة به.">Each area shows its own backup status.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sheet" id="settings" aria-labelledby="settings-title">
+      <div class="spread spread-reverse">
+        <div class="spread-copy">
+          <h2 id="settings-title" data-ar="الدخول برقم الهاتف. القفل برمز PIN.">Sign-in is a phone number. The lock is a PIN.</h2>
+          <dl class="spec">
+            <div>
+              <dt data-ar="الدخول">Sign-in</dt>
+              <dd data-ar="رقم هاتف، ثم رمز يُستخدم مرة واحدة.">A phone number, then a one-time code.</dd>
+            </div>
+            <div>
+              <dt data-ar="قفل التطبيق">App lock</dt>
+              <dd data-ar="يمكنك طلب رمز PIN لفتح Bayan.">You can require a PIN to open Bayan.</dd>
+            </div>
+            <div>
+              <dt data-ar="الإيصال">Receipts</dt>
+              <dd data-ar="اسم المحل وشعاره يظهران على الإيصالات.">The store name and logo appear on receipts.</dd>
+            </div>
+            <div>
+              <dt data-ar="اللغة">Language</dt>
+              <dd data-ar="العربية هي اللغة الافتراضية. ومعها English و French و Turkish.">Arabic is the default. English, French, and Turkish are included.</dd>
+            </div>
+            <div>
+              <dt data-ar="الوقت">Time</dt>
+              <dd data-ar="12 ساعة أو 24 ساعة.">12-hour or 24-hour.</dd>
+            </div>
+            <div>
+              <dt data-ar="المال">Money</dt>
+              <dd data-ar="المبالغ تُحفظ كما هي، بلا أخطاء تقريب. العملة تُحدَّد لكل محل. EGP هي الافتراضية.">Amounts are stored exactly, with no rounding errors. The currency is set per store. EGP is the default.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="spread-visual">
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/settings.png?v=2" width="390" height="844" alt="Bayan settings for language, PIN lock, and the store profile" data-ar-alt="إعدادات Bayan للغة وقفل PIN وبيانات المحل" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="الإعدادات">Settings</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet" id="screens" aria-labelledby="screens-title">
+      <div class="block block-end">
+        <h2 id="screens-title" data-ar="من أول شاشة إلى الإعدادات.">From the first screen to settings.</h2>
+        <p class="lede" data-ar="اختيار اللغة، والدفتر، وجهة الاتصال، والصندوق، والمساعد، والإعدادات.">Language, the ledger, a contact, the cashbook, the assistant, and settings.</p>
+      </div>
+      <ul class="gallery-row" tabindex="0" aria-label="Bayan screens" data-ar-aria-label="شاشات Bayan">
+        <li>
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/onboarding.png?v=2" width="390" height="844" alt="Bayan language screen, with Arabic selected" data-ar-alt="شاشة لغة Bayan والعربية مختارة" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="اختيار اللغة">Language</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/ledger.png?v=2" width="390" height="844" alt="Bayan credit ledger with customer balances" data-ar-alt="دفتر الآجل في Bayan وأرصدة العملاء" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="دفتر الآجل">Credit ledger</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/contact.png" width="390" height="844" alt="A Bayan contact with a running balance and transactions" data-ar-alt="جهة اتصال في Bayan برصيد جارٍ وحركات" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="جهة الاتصال">Contact</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/cashbook.png" width="390" height="844" alt="Bayan cashbook listing money in and money out" data-ar-alt="صندوق Bayan يعرض الداخل والخارج" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="الصندوق">Cashbook</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/ai.png" width="390" height="844" alt="Bayan assistant ready to record an invoice in Egyptian Arabic" data-ar-alt="مساعد Bayan جاهز لتسجيل فاتورة بالمصرية" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="المساعد">Assistant</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-fallback" aria-hidden="true"></div>
+                <img src="screens/settings.png?v=2" width="390" height="844" alt="Bayan settings for language, PIN lock, and the store profile" data-ar-alt="إعدادات Bayan للغة وقفل PIN وبيانات المحل" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <figcaption data-ar="الإعدادات">Settings</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section class="sheet" id="qcore" aria-labelledby="qcore-title">
+      <div class="block block-narrow">
+        <h2 id="qcore-title" data-ar="Bayan من بناء Qcore.">Bayan is built by Qcore.</h2>
+        <p class="lede" data-ar="Bayan تطبيقنا لصغار التجار في مصر. الفريق نفسه يبني تطبيقات مخصصة للميدان والمستودعات والحضور والموافقات، على العملية التي تديرها اليوم.">Bayan is our app for small merchants in Egypt. The same team builds custom mobile apps for field work, warehouses, attendance, and approvals, on the operation you already run.</p>
+        <p class="lede" data-ar="إذا كنت تحتاج تطبيقًا لمؤسستك، فابدأ بمحادثة.">If you need an app of your own, start with a conversation.</p>
+        <p class="link-row">
+          <a class="inline-link" href="../" data-ar="موقع Qcore Solutions">Qcore Solutions</a>
+          <a class="inline-link" href="../#services" data-ar="تطبيقات الجوال على موقع Qcore">Mobile apps on the Qcore site</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="bayan-close" id="access" aria-labelledby="access-title">
+      <div class="bayan-close-inner">
+        <div>
+          <h2 id="access-title" data-ar="الوصول المبكر يبدأ برسالة.">Early access starts with a message.</h2>
+          <p class="hero-lead" data-ar="Bayan غير منشور بعد على متاجر التطبيقات العامة. تواصل معنا للوصول المبكر.">Bayan is not on the public app stores yet. Contact us for early access.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-link" href="https://wa.me/201505716467">
+            <span data-ar="واتساب">WhatsApp</span>
+            <strong dir="ltr">+20 150 571 6467</strong>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="contact-link" href="mailto:contact@qcore-solutions.com">
+            <span data-ar="البريد الإلكتروني">Email</span>
+            <strong dir="ltr">contact@qcore-solutions.com</strong>
+            <b aria-hidden="true">↗</b>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand-block">
+      <a class="wordmark footer-brand" href="../">
+        <svg class="footer-mark" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="footer-mark-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="116" fill="#000"/><path d="M169 250H328L584 560H425Z" fill="#000"/></mask></defs><g transform="translate(-51.2 -51.2) scale(1.2)"><circle cx="256" cy="256" r="185" fill="#12203a" mask="url(#footer-mark-cut)"/><path fill="#1a80f5" d="M227 285H328L439 420H338Z"/></g></svg>
+        <span class="wordmark-name">Qcore</span>
+        <span class="wordmark-sub">solutions</span>
+      </a>
+      <p data-ar="تنفيذ ERPNext وبرمجيات تساعد عملك على الاتصال والعمل بوضوح.">ERPNext delivery and software that helps your operation work as one.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation" data-ar-aria-label="تنقل التذييل">
+      <a href="../#services" data-ar="الخدمات">Services</a>
+      <a href="../#approach" data-ar="منهجنا">Approach</a>
+      <a href="../#delivery" data-ar="التنفيذ">Delivery</a>
+      <a href="../#work" data-ar="الخبرة">Experience</a>
+      <a href="#top" data-ar="بيان">Bayan</a>
+    </nav>
+    <div class="footer-contact">
+      <a href="mailto:contact@qcore-solutions.com">contact@qcore-solutions.com</a>
+      <a href="https://wa.me/201505716467" data-ar="تواصل معنا للوصول المبكر">Contact us for early access</a>
+      <button class="lang-btn footer-lang" type="button" data-lang-toggle>عربي</button>
+    </div>
+    <div class="footer-bottom">
+      <span>Qcore solutions · Confidential</span>
+      <span dir="ltr">© 2026 Qcore Solutions</span>
+    </div>
+  </footer>
+  <script src="../lang.js"></script>
+  <script src="../main.js?v=2"></script>
+</body>
+</html>

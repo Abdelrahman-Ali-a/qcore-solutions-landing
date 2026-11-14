@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>.ring{fill:#12203a}@media(prefers-color-scheme:dark){.ring{fill:#e8eef7}}</style>
+  <defs>
+    <mask id="ring-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <circle cx="256" cy="256" r="116" fill="#000"/>
+      <path d="M169 250H328L584 560H425Z" fill="#000"/>
+    </mask>
+  </defs>
+  <g transform="translate(-51.2 -51.2) scale(1.2)">
+    <circle class="ring" cx="256" cy="256" r="185" mask="url(#ring-cut)"/>
+    <path fill="#1a80f5" d="M227 285H328L439 420H338Z"/>
+  </g>
+</svg>
