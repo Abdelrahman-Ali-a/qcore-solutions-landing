@@ -503,3 +503,20 @@ html[dir="rtl"] .skip-link { left: auto; right: 16px; }
 @media (prefers-reduced-motion: reduce) {
   .phone-cluster { animation: none; }
 }
+
+/* Design audit (2026-11-15): the hero's opening line is the real headline, so give it headline weight
+   and let the logo tile step back. */
+.bayan .hero-copy { width: min(100%, 40rem); }
+.bayan-hero .bayan-name { padding: 12px 18px; border-radius: 16px; }
+.bayan-hero .bayan-logo { width: clamp(96px, 8vw, 120px); }
+.bayan-hero .hero-lead {
+  max-width: 18em;
+  color: #fff;
+  font-size: clamp(2rem, 3.3vw, 2.875rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+html[lang="ar"] .bayan-hero .hero-lead { letter-spacing: 0; line-height: 1.45; }
+.bayan-hero .hero-note { margin-top: 18px; font-size: 1.0625rem; }
