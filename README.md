@@ -35,6 +35,18 @@ npx wrangler pages deploy <path-to>/pages-dist --project-name qcore-solutions --
 
 `build-pages.sh` copies `site/` into `pages-dist/`, including `_headers`.
 
+Notes on `site/`:
+
+- `_headers` sets a Content-Security-Policy. The Bayan page's two inline
+  `<style>` blocks are allowed by SHA-256 hash, so if you edit either one,
+  recompute its hash (`printf '%s' '<css>' | openssl dgst -sha256 -binary | base64`)
+  and update `_headers`, or the page stays hidden. Any new inline script or
+  third-party origin also needs a CSP entry.
+- When `style.css` changes, bump `?v=` in `index.html`, `bayan/index.html`
+  and `404.html`.
+- `404.html` uses root-relative links because Pages serves it at any path.
+- Social previews: `assets/og-image.png` and `bayan/og-image.png` (1200×630).
+
 The root `index.html`/`css/`/`js/` and `variants/` are earlier designs, kept
 for reference; they are not deployed.
 
