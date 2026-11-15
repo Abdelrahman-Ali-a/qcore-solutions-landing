@@ -60,6 +60,35 @@
     document.dispatchEvent(new CustomEvent("qcore:lang", { detail: lang }));
   }
 
+  /* Built pages (scripts/prerender.mjs) are already in one language, and the
+     switch is a link to the other page. Here we only remember the choice and
+     send ?lang=… links, a saved choice, or an Arabic browser on the English
+     home page (data-auto-lang) to the Arabic page. */
+  if (root.hasAttribute("data-lang-fixed")) {
+    var here = root.getAttribute("lang");
+    var toggle = document.querySelector("[data-lang-toggle]");
+    var other = toggle && toggle.getAttribute("href");
+    var q = /[?&]lang=(en|ar)\b/.exec(location.search);
+    var want = q ? q[1] : null;
+    if (!want && root.hasAttribute("data-auto-lang")) {
+      var saved = stored();
+      if (saved === "en" || saved === "ar") want = saved;
+      else if ((navigator.language || "").toLowerCase().indexOf("ar") === 0) want = "ar";
+    }
+    if (want && want !== here && other) {
+      location.replace(other + location.hash);
+      return;
+    }
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest && e.target.closest("[data-lang-toggle]");
+      if (!link) return;
+      try { localStorage.setItem(KEY, link.getAttribute("hreflang")); } catch (err) {}
+      if (location.hash) link.setAttribute("href", link.getAttribute("href").split("#")[0] + location.hash);
+    });
+    document.dispatchEvent(new CustomEvent("qcore:lang", { detail: here }));
+    return;
+  }
+
   if (!root.getAttribute("data-title-en")) root.setAttribute("data-title-en", document.title);
   var current = initial();
   apply(current);
