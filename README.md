@@ -4,12 +4,13 @@ Static site (no build step): plain HTML/CSS/JS implementing the
 `Qcore Landing v2` design from Claude Design.
 
 ```
-index.html
+site/              ← the live site (landing + bayan/), deployed by build-pages.sh
+index.html         ← earlier design, not deployed
 css/style.css
 js/main.js
 img/               ← logo + favicons, generated from the source artwork in the repo root
 build.sh           ← assembles dist/ for the older Worker setup
-build-pages.sh     ← assembles pages-dist/ from variants/b-refined/ (the live site)
+build-pages.sh     ← assembles pages-dist/ from site/ (the live site)
 _headers           ← security + cache headers
 wrangler.jsonc     ← Cloudflare Workers config (no routes; the domain is on Pages)
 design-source/     ← original .dc.html design bundle + chat transcripts (reference only)
@@ -17,9 +18,14 @@ design-source/     ← original .dc.html design bundle + chat transcripts (refer
 
 ## Deploy
 
-The public site is `variants/b-refined/`, served by the Cloudflare Pages
-project **qcore-solutions** (free plan) at https://qcore-solutions.pages.dev,
-with `qcore-solutions.com` and `www.` attached as custom domains.
+The public site is `site/`, served by the Cloudflare Pages project
+**qcore-solutions** (free plan) at https://qcore-solutions.pages.dev, with
+`qcore-solutions.com` and `www.` attached as custom domains. It holds the
+landing page and the Bayan product page (`site/bayan/`).
+
+`site/` was imported on 2026-11-14 by mirroring the live deployment, which
+had been published from outside this repo. Edit it here and deploy from here
+so the repo and the live site stay the same.
 
 ```sh
 sh build-pages.sh
@@ -27,10 +33,10 @@ sh build-pages.sh
 npx wrangler pages deploy <path-to>/pages-dist --project-name qcore-solutions --branch main
 ```
 
-`build-pages.sh` assembles `pages-dist/`: it copies the variant plus the logo,
-favicons, client logos and language script it links to outside its folder,
-rewrites those links, and leaves working files (DESIGN.md, README, the image
-prompt and the PNG master) out of the public upload.
+`build-pages.sh` copies `site/` into `pages-dist/`, including `_headers`.
+
+The root `index.html`/`css/`/`js/` and `variants/` are earlier designs, kept
+for reference; they are not deployed.
 
 **Run the Pages deploy outside this folder.** Wrangler walks up to
 `wrangler.jsonc`, a Worker config, and acts on it instead: run here, it once
