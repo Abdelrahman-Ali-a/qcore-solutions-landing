@@ -1,8 +1,8 @@
 #!/bin/sh
 # Assemble site/ (the live qcore-solutions.com) into pages-dist/ for
-# Cloudflare Pages. site/ is self-contained, so this is a straight copy;
-# it exists so the deploy command never points at the repo root, which
-# holds wrangler.jsonc (see README).
+# Cloudflare Pages: copy site/, then pre-render the English and Arabic
+# pages. Deploy pages-dist/ from outside the repo root, which holds
+# wrangler.jsonc (see README).
 set -e
 SRC=site
 OUT=pages-dist
@@ -10,7 +10,17 @@ mkdir -p "$OUT"
 find "$OUT" -mindepth 1 -delete
 cp -R "$SRC"/. "$OUT"/
 
-if grep -rqE '(src|href)="\.\./\.\./' "$OUT"/index.html "$OUT"/bayan/index.html; then
+# One static page per language: /, /ar/, /bayan/, /bayan/en/ (+ sitemap.xml).
+# Needs `npm install` once for linkedom.
+node scripts/prerender.mjs "$SRC" "$OUT"
+
+if grep -rq '__WEB3FORMS_KEY__' "$OUT"; then
+  echo "error: the contact form has no Web3Forms access key." >&2
+  echo "       Replace __WEB3FORMS_KEY__ in site/index.html (see README)." >&2
+  exit 1
+fi
+
+if grep -rqE '(src|href)="\.\./' "$OUT"/index.html "$OUT"/ar/index.html "$OUT"/bayan/index.html "$OUT"/bayan/en/index.html; then
   echo "error: a page links outside pages-dist/" >&2
   exit 1
 fi

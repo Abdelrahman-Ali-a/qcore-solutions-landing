@@ -28,12 +28,38 @@ had been published from outside this repo. Edit it here and deploy from here
 so the repo and the live site stay the same.
 
 ```sh
+npm install        # once: the build uses linkedom to pre-render pages
 sh build-pages.sh
 # then, from a folder with no wrangler.jsonc above it:
 npx wrangler pages deploy <path-to>/pages-dist --project-name qcore-solutions --branch main
 ```
 
-`build-pages.sh` copies `site/` into `pages-dist/`, including `_headers`.
+`build-pages.sh` copies `site/` into `pages-dist/`, including `_headers`, then
+runs `scripts/prerender.mjs`, which writes one static page per language:
+
+| URL | Language | Source |
+|---|---|---|
+| `/` | English | `site/index.html` |
+| `/ar/` | Arabic | `site/index.html` (`data-ar` text) |
+| `/bayan/` | Arabic | `site/bayan/index.html` (`data-ar` text) |
+| `/bayan/en/` | English | `site/bayan/index.html` |
+
+Each gets its own canonical URL and `hreflang` links, and the sitemap is
+generated with them. Edit text in `site/` only: English in the element, Arabic
+in `data-ar` / `data-ar-<attr>`. Opened straight from `site/`, the pages still
+switch language in the browser, as before.
+
+On the built pages `lang.js` only remembers the visitor's choice. It sends
+`?lang=` links, a saved choice, or an Arabic-language browser from `/` to
+`/ar/`.
+
+### Contact form
+
+The form in the contact section posts to [Web3Forms](https://web3forms.com),
+which emails each message to the address the access key was created with.
+The key is in `site/index.html` (`name="access_key"`). It is public by
+design; it only lets the form send to that address. `build-pages.sh` refuses
+to build while the `__WEB3FORMS_KEY__` placeholder is still there.
 
 Notes on `site/`:
 
@@ -46,6 +72,7 @@ Notes on `site/`:
   and `404.html`.
 - `404.html` uses root-relative links because Pages serves it at any path.
 - Social previews: `assets/og-image.png` and `bayan/og-image.png` (1200×630).
+- The CSP already allows Web3Forms and Cloudflare Web Analytics.
 
 The root `index.html`/`css/`/`js/` and `variants/` are earlier designs, kept
 for reference; they are not deployed.

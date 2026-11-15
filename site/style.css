@@ -282,3 +282,27 @@ html[lang="ar"] .ui-window [data-ar]{font-family:Alexandria,system-ui,sans-serif
 
 /* mock-UI titles in the hero: styled like headings, kept out of the document outline */
 .ui-h{font-weight:700}
+
+/* contact form */
+.contact-form{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;margin-top:6px;padding-top:34px;border-top:1px solid #26364c}
+.form-head{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.form-head h3{font-size:20px;font-weight:600;letter-spacing:-.02em;margin:0;color:#f5f8fb}
+.form-head p{margin:0;color:#9eacc0;font-size:14px}
+.field{display:grid;gap:7px}
+.field>span{font-size:13px;color:#bac6d6}
+.field-wide{grid-column:1/-1}
+.field input,.field textarea{width:100%;padding:13px 14px;border:1px solid #334258;border-radius:9px;background:#0f1a2b;color:#fff;font:inherit;font-size:15px;line-height:1.45}
+.field textarea{resize:vertical;min-height:120px}
+.field input::placeholder,.field textarea::placeholder{color:#6f7f95}
+.field input:focus-visible,.field textarea:focus-visible{outline:2px solid #1a80f5;outline-offset:1px;border-color:#1a80f5}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.form-foot .button{cursor:pointer}
+.form-foot .button:disabled{opacity:.6;cursor:progress;transform:none}
+.form-status{margin:0;font-size:14px;color:#c4cfde}
+.contact-form[data-state="sent"] .form-status{color:#7fd6a8}
+.contact-form[data-state="error"] .form-status{color:#ffb4a8}
+.form-trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+@media(max-width:700px){.contact-form{grid-template-columns:1fr;padding-top:28px}.form-head h3{font-size:18px}}
+
+/* the language switch is a link on built pages */
+a.lang-btn{display:inline-flex;align-items:center;justify-content:center}

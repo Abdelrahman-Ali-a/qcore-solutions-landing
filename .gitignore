@@ -8,3 +8,4 @@ dist/
 !.env.example
 pages-dist/
 .impeccable/hook.cache.json
+node_modules/

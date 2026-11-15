@@ -1,0 +1,11 @@
+{
+  "name": "qcore-solutions-landing",
+  "private": true,
+  "description": "Build tooling for site/: pre-renders the Arabic and English pages.",
+  "scripts": {
+    "build": "sh build-pages.sh"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.5"
+  }
+}
