@@ -19,15 +19,15 @@
     if (form.getAttribute("data-state") === "sending") return;
     var data = new FormData(form);
     if (data.get("botcheck")) return;
-    var body = {};
-    data.forEach(function (v, k) { body[k] = v; });
-    body.page_language = document.documentElement.lang || "en";
+    data.append("page_language", document.documentElement.lang || "en");
     button.disabled = true;
     say("sending", "sending");
+    // FormData with no custom Content-Type is a CORS "simple" request: no
+    // preflight, which Web3Forms answers with 403.
     fetch(form.action, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(body)
+      headers: { Accept: "application/json" },
+      body: data
     })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.success; }); })
       .then(function (ok) {

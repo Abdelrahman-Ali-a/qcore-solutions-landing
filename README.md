@@ -57,7 +57,7 @@ On the built pages `lang.js` only remembers the visitor's choice. It sends
 
 The form in the contact section posts to [Web3Forms](https://web3forms.com),
 which emails each message to the address the access key was created with.
-The key goes in `site/index.html` (`name="access_key"`). It is public by
+The key is in `site/index.html` (`name="access_key"`). It is public by
 design; it only lets the form send to that address. `build-pages.sh` refuses
 to build while the `__WEB3FORMS_KEY__` placeholder is still there.
 
