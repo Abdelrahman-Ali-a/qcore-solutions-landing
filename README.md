@@ -68,6 +68,11 @@ Notes on `site/`:
   recompute its hash (`printf '%s' '<css>' | openssl dgst -sha256 -binary | base64`)
   and update `_headers`, or the page stays hidden. Any new inline script or
   third-party origin also needs a CSP entry.
+- Content that is written but waiting on details (team, booking link,
+  discovery fee, Bayan pricing and privacy answers) lives in
+  `held-content.html` at the repo root, which is not deployed. Placeholders
+  on a page carry `data-todo`; `build-pages.sh` refuses to build while any
+  remain, unless `ALLOW_TODO=1` is set for a preview deploy.
 - When `style.css` changes, bump `?v=` in `index.html`, `bayan/index.html`
   and `404.html`.
 - `404.html` uses root-relative links because Pages serves it at any path.
